@@ -7,12 +7,18 @@ import '../MainPage.css'
 
 const useStyles = makeStyles({
   root: {
-    margin: "10px"
+    margin: "10px",
+    boxShadow: "0 3px 5px 0 rgba(0, 0, 0, .5)"
   },
   actionArea: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
     width: 400,
+    height: 550
   },
   media: {
+    width: "100%",
     height: 300
   },
   bold: {
