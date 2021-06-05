@@ -3,12 +3,15 @@ import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, make
 import Moment from 'react-moment'
 import ApiService from '../../services/ApiService.js'
 
-import '../MainPage.css'
-
 const useStyles = makeStyles({
+  wrapper: {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "space-between"
+  },
   root: {
-    margin: "10px",
-    boxShadow: "0 3px 5px 0 rgba(0, 0, 0, .5)"
+    margin: "10px 0",
+    boxShadow: "0 3px 3px 0 rgba(0, 0, 0, .25)"
   },
   actionArea: {
     display: "flex",
@@ -33,7 +36,7 @@ const useStyles = makeStyles({
 
 function MainNews() {
   const [items, setItems] = useState([])
-  const [result, setResult] = useState('')
+  // const [result, setResult] = useState('')
   const classes = useStyles()
   
   useEffect(() => {
@@ -42,17 +45,15 @@ function MainNews() {
     })
   }, [])
 
-  const filteredNews = items.filter(news => news.webTitle.toLowerCase().includes(result.toLowerCase()))
+  // const filteredNews = items.filter(news => news.webTitle.toLowerCase().includes(result.toLowerCase()))
 
   const bodyInfo = items.map(news => news.fields.bodyText.slice(0, 40))
 
-  // const newDate = 
-
   return (
     <div>
-      <div className="main__wrapper">
+      <div className={classes.wrapper}>
         {
-          filteredNews.map((news, index) => {
+          items.map((news, index) => {
             return (
               <div key={index}>
                 <Card className={classes.root}>

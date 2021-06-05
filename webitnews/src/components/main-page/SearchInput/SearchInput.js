@@ -1,11 +1,15 @@
 import React from 'react'
 import SearchIcon from '@material-ui/icons/Search';
 
+import './SearchInput.css'
+
 function SearchInput() {
   return (
     <div>
       <form className="search__form">
-            <SearchIcon className="searchIcon" />
+        <div className="searchIcon">
+          <SearchIcon />
+        </div>
             <input
               type="text"
               placeholder="Type something to start search"

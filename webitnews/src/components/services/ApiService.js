@@ -1,6 +1,4 @@
-// const apiUrl = 'https://webit-news-search.p.rapidapi.com/search';
 const apiUrl = ' https://content.guardianapis.com/search?q=sport&show-tags=all&page-size=7&show-fields=all&order-by=relevance&api-key=0cc1c5bc-7fe4-47bc-80cc-f17c13be193c';
-
 
 class ApiService {
   static fetchShows = async () => {

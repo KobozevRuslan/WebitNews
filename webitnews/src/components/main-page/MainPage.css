@@ -1,9 +1,12 @@
+.main__wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1300px;
-  margin: 0 auto;
 }
 
 .form {
@@ -11,29 +14,25 @@
   align-items: center;
 }
 
-.search__input {
-  width: 250px;
-  padding: 10px 40px;
-  margin-left: 40px;
-  border-radius: 5px;
-  border: none;
+.link {
+  color: #000;
+  text-decoration: none;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
   background: #F2F2F2;
-  outline: none;
+  margin-top: 20px;
 }
 
-.searchIcon { 
-  position: relative;
-  top: 7px;
-  left: 75px;
-}
-
-input::placeholder {
-  color: black;
-}
-
-.main__wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 1300px;
+.footer__text {
+  width: 1300px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.footer__text span {
+  margin-left: 10px;
 }
