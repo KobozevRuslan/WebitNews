@@ -3,7 +3,7 @@ import SearchIcon from '@material-ui/icons/Search';
 
 import './SearchInput.css'
 
-function SearchInput() {
+function SearchInput({onSearch}) {
   return (
     <div>
       <form className="search__form">
@@ -14,7 +14,7 @@ function SearchInput() {
               type="text"
               placeholder="Type something to start search"
               className="search__input"
-              // onChange={(event) => setResult(event.target.value)}
+              onChange={(event) => onSearch(event.target.value)}
             />
           </form>
     </div>

@@ -1,23 +1,20 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import './BurgerMenu.css'
 
-const BurgerMenu = () => {
-  const [status, setStatus] = useState('close')
-  
+const BurgerMenu = ({open, onClick}) => {
+
   return (
     <div>
-      <nav>
-        <div
-        role="button"
-        className="burgerBtn"
-        onClick={() => setStatus(status === 'open' ? 'close' : 'open')}
-        >
-          <span className={status} />
-          <span className={status} />
-          <span className={status} />
-        </div>
-      </nav>
+      <div
+      role="button"
+      className="burgerBtn"
+      onClick={onClick}
+      >
+        <span className={open ? 'open' : 'close'}/>
+        <span className={open ? 'open' : 'close'} />
+        <span className={open ? 'open' : 'close'} />
+      </div>
     </div>
   )
 }
