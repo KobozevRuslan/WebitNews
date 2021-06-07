@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
+import Header from './Header/Header';
 import MainNews from './MainNews/MainNews';
 import ScrollToTop from './ScrollToTop/ScrollToTop';
-import { Link } from 'react-router-dom';
+import Footer from './Footer/Footer';
 
 import './MainPage.css'
-import Header from './Header/Header';
 
 const MainPage = () => {
   const [search, setSearch] = useState('')
@@ -17,24 +17,11 @@ const MainPage = () => {
   return (
     <div>
       <div className="main__wrapper">
-        <div className="header">
-          <div  className="form">
-            <Link className="link" to="/">
-              <h2>News App</h2>
-            </Link>
-            <Header onSearch={setSearchQuery} onQueryChange={(val) => setQuery(val)}/>
-          </div>
-        </div>
-        <MainNews query={search} apiQuery={query}/>
+        <Header onSearch={setSearchQuery} onQueryChange={(val) => setQuery(val)}/>
+        <MainNews search={search} apiQuery={query}/>
         <ScrollToTop />
       </div>
-      <div className="footer">
-        <div className="line"></div>
-        <div className="footer__text">
-          <h3>News App</h3>
-          <span>2021 copyright all rights reserved</span> 
-        </div>
-      </div>
+        <Footer />
     </div>
   )
 }

@@ -3,18 +3,17 @@ import { Button, makeStyles } from '@material-ui/core'
 import { ArrowUpward } from '@material-ui/icons'
 
 const useStyles = makeStyles({
-  wrapper: {
-    textAlign: "end",
-    position: 'relative'
-  },
   btn: {
     position: "fixed",
     left: '80%',
-    bottom: 150,
+    bottom: 75,
     background: "#2F80ED",
     color: "#fff",
+    opacity: 0.3,
+    transition: 'all .5s ease',
     '&:hover': {
-      background: "#2F80ED"
+      background: "#2F80ED",
+      opacity: 1
     }
   },
   arrowUp: {
@@ -28,10 +27,9 @@ const useStyles = makeStyles({
 function ScrollToTop() {
   const [show, setShow] = useState(false)
   const classes = useStyles()
-
-
+  
   const onScroll = () => {
-    if(window.pageYOffset > 500) {
+    if(window.pageYOffset > 1100) {
       setShow(true)
     }else {
       setShow(false)
@@ -45,18 +43,13 @@ function ScrollToTop() {
   useEffect(() => {
     window.addEventListener('scroll', onScroll)
   }, [])
- 
+
   return (
-    <div style={{display: show ? 'block' : 'none', position: 'fixed', left: '50px', bottom: '150px', color: 'red'}}>
-    testtxcz
-      <div className={classes.wrapper}>
-        {/* {show && */}
-          <Button className={classes.btn} variant="contained" onClick={handleClick}>
-            Scroll to top
-            <ArrowUpward className={classes.arrowUp} />
-          </Button>
-        {/* } */}
-      </div>
+    <div style={{display: show ? 'block' : 'none'}}>
+      <Button className={classes.btn} variant="contained" onClick={handleClick}>
+        Scroll to top
+        <ArrowUpward className={classes.arrowUp} />
+      </Button>
     </div>
   )
 }

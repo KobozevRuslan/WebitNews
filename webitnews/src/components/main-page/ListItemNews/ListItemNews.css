@@ -1,0 +1,37 @@
+.mainList {
+  display: flex;
+  width: 700px;
+  justify-content: space-around;
+}
+
+.listType{
+  position: absolute;
+  box-shadow: 0px 0px 4px #BDBDBD;
+  background: #FFFFFF;
+  border-radius: 5px;
+  left: 45%;
+  width: 200px; 
+  height: 150px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: column;
+  z-index: 100;
+}
+
+li {
+  list-style-type: none;
+}
+
+.listItemHover:hover {
+  color: #2F80ED;
+  cursor: pointer;
+}
+
+.listItem {
+  padding: 5px;
+}
+
+.listItem:hover {
+  color: #2F80ED;
+  cursor: pointer;
+}
